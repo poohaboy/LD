@@ -1,4 +1,4 @@
-Const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const { getUserLanguages, headers, removeQuotes } = require('./helper.js');
 
 // 💡 [추가] 랜덤 딜레이를 위한 헬퍼 함수

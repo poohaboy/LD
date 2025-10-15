@@ -5,7 +5,7 @@ const { getUserLanguages, headers, removeQuotes } = require('./helper.js');
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const init = async () => {
-    const lessonsToComplete = Number(process.env.lessonsToComplete) || 10;
+    const lessonsToComplete = Number(process.env.lessonsToComplete) || 20;
     const token = removeQuotes(process.env.token);
     const userId = removeQuotes(process.env.userId);
 

@@ -92,7 +92,10 @@ const init = async () => {
             }
             
             // 💡 [포함] 다음 반복 실행 전 1초 ~ 3초 사이의 랜덤 딜레이 적용
-            const delayTime = 1000 + Math.floor(Math.random() * 2000); 
+            //const delayTime = 1000 + Math.floor(Math.random() * 2000); 
+            // 💡 [포함] 다음 반복 실행 전 70초 ~ 90초 사이의 랜덤 딜레이 적용
+            const delayTime = 70000 + Math.floor(Math.random() * 20000); 
+    
             console.log(`Waiting for ${delayTime / 1000} seconds before next lesson...`);
             await delay(delayTime);
         }

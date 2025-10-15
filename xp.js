@@ -68,7 +68,7 @@ const init = async () => {
                         showBestTranslationInGradingRibbon: true,
                         
                         // 💡 [최종 수정] 서버가 확실하게 승인하는 XP 값으로 설정
-                        xpPromised: 20, // 👈 20 XP 요청
+                        xpPromised: 40, // 👈 20 XP 요청
                     }),
                 }).then(res => {
                     if (!res.ok) {

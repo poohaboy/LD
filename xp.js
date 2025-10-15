@@ -60,7 +60,7 @@ const init = async () => {
                         endTime: Date.now() / 1000,
                         failed: false,
                         heartsLeft: 0,
-                        hasBoost: false,
+                        hasBoost: true,
                         maxInLessonStreak: 15,
                         shouldLearnThings: true,
                         progressUpdates: [],
@@ -69,7 +69,7 @@ const init = async () => {
                         showBestTranslationInGradingRibbon: true,
                         
                         // 💡 [최종 수정] 서버가 확실하게 승인하는 XP 값으로 설정
-                        xpPromised: 10, // 👈 10 XP 요청
+                        xpPromised: 20, // 👈 10 XP 요청
                         happyHourBonusXp: 10,
                     }),
                 }).then(res => {

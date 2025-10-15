@@ -5,9 +5,9 @@ on:
   workflow_dispatch:
     inputs:
       lessonsToComplete:
-        description: 'Amount of fake lessons to complete each time. (Each give 200 XP)'
+        description: 'Amount of fake lessons to complete each time. (Each give 20 XP)'
         required: true
-        default: 5
+        default: 20
 
   schedule:
     - cron: '*/45 * * * *'

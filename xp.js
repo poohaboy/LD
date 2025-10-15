@@ -22,7 +22,8 @@ const init = async () => {
             challengeTypes: [], 
             fromLanguage: userLanguages.fromLanguage,
             learningLanguage: userLanguages.learningLanguage,
-            type: "GLOBAL_PRACTICE", // 👈 가장 안정적인 세션 유형
+            //type: "GLOBAL_PRACTICE", // 👈 가장 안정적인 세션 유형
+            type: "TARGET_PRACTICE",
         };
 
         for (let i = 0; i < lessonsToComplete; i++) {
@@ -68,7 +69,8 @@ const init = async () => {
                         showBestTranslationInGradingRibbon: true,
                         
                         // 💡 [최종 수정] 서버가 확실하게 승인하는 XP 값으로 설정
-                        xpPromised: 10, // 👈 10 XP 요청
+                        xpPromised: 20, // 👈 10 XP 요청
+                        happyHourBonusXp: 5,
                     }),
                 }).then(res => {
                     if (!res.ok) {

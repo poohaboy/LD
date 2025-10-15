@@ -68,7 +68,8 @@ const init = async () => {
                         sessionExperimentRecord: [],
                         sessionStartExperiments: [],
                         showBestTranslationInGradingRibbon: true,
-                        xpPromised: 201,
+                        //xpPromised: 201,
+                        happyHourBonusXp: 201,
                     }),
                 }).then(res => {
                     if (!res.ok) {

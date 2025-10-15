@@ -22,8 +22,8 @@ const init = async () => {
             challengeTypes: [], 
             fromLanguage: userLanguages.fromLanguage,
             learningLanguage: userLanguages.learningLanguage,
-            type: "GLOBAL_PRACTICE", // 👈 가장 안정적인 세션 유형
-            //type: "TARGET_PRACTICE",
+            //type: "GLOBAL_PRACTICE", // 👈 가장 안정적인 세션 유형
+            type: "TARGET_PRACTICE",
         };
 
         for (let i = 0; i < lessonsToComplete; i++) {

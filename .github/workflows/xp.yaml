@@ -5,9 +5,9 @@ on:
   workflow_dispatch:
     inputs:
       lessonsToComplete:
-        description: 'Amount of fake lessons to complete. (Each give 200 XP)'
+        description: 'Amount of fake lessons to complete. (Each give 20 XP)'
         required: true
-        default: 5
+        default: 10
 
 jobs:
   check-bats-version:

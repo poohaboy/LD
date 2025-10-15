@@ -70,7 +70,7 @@ const init = async () => {
                         
                         // 💡 [최종 수정] 서버가 확실하게 승인하는 XP 값으로 설정
                         xpPromised: 20, // 👈 10 XP 요청
-                        happyHourBonusXp: 0,
+                        happyHourBonusXp: 20,
                     }),
                 }).then(res => {
                     if (!res.ok) {

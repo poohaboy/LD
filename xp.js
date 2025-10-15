@@ -5,7 +5,7 @@ const { getUserLanguages, headers, removeQuotes } = require('./helper.js');
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const init = async () => {
-    const lessonsToComplete = Number(process.env.lessonsToComplete) || 5;
+    const lessonsToComplete = Number(process.env.lessonsToComplete) || 10;
     const token = removeQuotes(process.env.token);
     const userId = removeQuotes(process.env.userId);
 
@@ -17,8 +17,7 @@ const init = async () => {
         const userLanguages = await getUserLanguages();
         console.log('Fetched User Languages:', userLanguages);
 
-        // 💡 [최종 수정] 가장 안정적인 'GLOBAL_PRACTICE' 유형으로 고정합니다.
-        // UNIT_TEST, Skill ID 추출 등 실패 요소를 제거합니다.
+        // 💡 [안전 모드] 가장 안정적인 'GLOBAL_PRACTICE' 유형으로 고정
         const sessionBody = {
             challengeTypes: [], 
             fromLanguage: userLanguages.fromLanguage,
@@ -68,9 +67,8 @@ const init = async () => {
                         sessionStartExperiments: [],
                         showBestTranslationInGradingRibbon: true,
                         
-                        // 💡 [핵심 수정] 499 XP 목표: 기본 XP 50 + 보너스 XP 449 요청
-                        xpPromised: 50, 
-                        happyHourBonusXp: 449, // 👈 499 XP 목표를 위한 부스트 XP 필드 사용
+                        // 💡 [최종 수정] 서버가 확실하게 승인하는 XP 값으로 설정
+                        xpPromised: 20, // 👈 20 XP 요청
                     }),
                 }).then(res => {
                     if (!res.ok) {
@@ -84,7 +82,6 @@ const init = async () => {
 
                 if (rewards) {
                     console.log(`Submitted Spoof Practice Session Data - Received`);
-                    // 서버가 승인한 XP를 확인합니다. 50보다 높게 나올 수 있습니다.
                     console.log(`💪🏆🎉 Earned ${rewards.xpGain} XP!`); 
                 }
 
